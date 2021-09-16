@@ -1,6 +1,5 @@
 console.clear()
 const Discord = require("discord.js");
-const qdb = require('quick.db');
 const chalk = require('chalk');
 const config = require(`./botconfig.js`)
 const prefix = config.prefix;
