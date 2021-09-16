@@ -12,9 +12,9 @@ module.exports = {
         general: "870914038933098517"
   },
   ticketembed: {
-    title: "",
-    description: "",
-    footer: ""
+    title: "Tickets",
+    description: "To create a ticket, click the button that suits your request!",
+    footer: "By Visa2Code"
   },
 token: process.env.TOKEN || "",
 mongo: process.env.MONGO || ""
