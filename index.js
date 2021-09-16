@@ -12,7 +12,18 @@ console.log(chalk.red('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+='))
   console.log(`Join Above for Support!`)
   console.log(chalk.red('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+='))
   //til here dont touch above anything
-
+if (config.ExpressServer) {
+const express = require('express')
+const app = express()
+ 
+app.get('/', function (req, res) {
+  res.send({
+  Working: "online"
+  })
+})
+ console.log(chalk.greenBright(`Web Server Started`))
+app.listen(3000)
+}
 
 const client = new Discord.Client({
    intents : [
