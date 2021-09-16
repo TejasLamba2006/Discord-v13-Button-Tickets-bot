@@ -18,13 +18,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TajuModding/Discord-Button-Tickets-Bot.git"
+    "url": "git+https://github.com/TajuModding/Discord-v13-Button-Tickets-bot.git"
   },
   "keywords": [],
   "author": "Tejas Lamba#1924",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TajuModding/Discord-Button-Tickets-Bot/issues"
+    "url": "https://github.com/TajuModding/Discord-v13-Button-Tickets-bot/issues"
   },
-  "homepage": "https://github.com/TajuModding/Discord-Button-Tickets-Bot#readme"
+  "homepage": "https://github.com/TajuModding/Discord-v13-Button-Tickets-bot#readme"
 }
