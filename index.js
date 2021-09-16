@@ -395,12 +395,12 @@ client.on("messageCreate", async(message) =>{
     message.delete()
     
     let embed = new Discord.MessageEmbed()
-      .setTitle(args)
-      .setDescription("To create a ticket, click the button that suits your request!")
+      .setTitle(config.ticketembed.title)
+      .setDescription(config.ticketembed.description)
       .setThumbnail(message.guild.iconURL())
       .setTimestamp()
       .setColor(0x5865F2)
-      .setFooter(message.guild.name, message.guild.iconURL())
+      .setFooter(`${message.guild.name}-${config.ticketembed.footer}`, message.guild.iconURL())
     let msg = await message.channel.send({ 
       embeds: [embed], 
       components: [trow] 
