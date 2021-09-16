@@ -1,0 +1,31 @@
+{
+  "name": "Discord-Button-Tickets-Bot",
+  "version": "1.0.0",
+  "description": "- Easy ticket bot in djs with buttons! - You can make a copy of this and host on replit.",
+  "main": "index.js",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "discord.js": "^13.1.0",
+    "dotenv": "^10.0.0",
+    "quick.db": "^7.1.3",
+    "quickmongo": "^3.0.2",
+    "randomstring": "^1.2.1"
+  },
+  "devDependencies": {
+    "node": "^16.6.1"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TajuModding/Discord-Button-Tickets-Bot.git"
+  },
+  "keywords": [],
+  "author": "Tejas Lamba#1924",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TajuModding/Discord-Button-Tickets-Bot/issues"
+  },
+  "homepage": "https://github.com/TajuModding/Discord-Button-Tickets-Bot#readme"
+}
