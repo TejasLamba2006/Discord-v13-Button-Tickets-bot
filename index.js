@@ -354,7 +354,7 @@ client.on("messageCreate", async(message) =>{
     .setTitle(`Error`)
     const Admin = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);
     const Moder = message.mentions.roles.second() || message.guild.roles.cache.get(args[1]);
-    if (!Admin !Moder) {
+    if (!Admin || !Moder) {
     main.setDescription(`Please mention an Admin role (or iD) first, *then* a Mod role (or iD) with this command! `)
       
       message.reply({ embeds: [main] })
