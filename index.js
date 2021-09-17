@@ -355,7 +355,7 @@ client.on("messageCreate", async(message) =>{
     const Moder = message.mentions.roles.second() || message.guild.roles.cache.get(args[1]);
     if (!Admin || !Moder) {
     
-      let main = = new Discord.MessageEmbed()
+      let main = new Discord.MessageEmbed()
      .setDescription(`Please mention an Admin role (or iD) first, *then* a Mod role (or iD) with this command! `)
       return message.reply({ embeds: [main] })
     }
@@ -366,7 +366,7 @@ client.on("messageCreate", async(message) =>{
   }
   if (command == prefix + 'setchannels'){
     if (!message.member.permissions.has('ADMINISTRATOR')) return message.reply({ content: `:x: This command requires \`ADMINISTRATOR\` permission.` });
-     let main = = new Discord.MessageEmbed()
+     let main = new Discord.MessageEmbed()
     .setTitle(`Error`)
      .setDescription(`Please mention a categoryid with this command! `)
      
