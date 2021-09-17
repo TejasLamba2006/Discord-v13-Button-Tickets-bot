@@ -191,7 +191,7 @@ client.on("messageCreate", async(message) =>{
 > \`${prefix}rename\` - Rename a specific ticket
 > \`${prefix}setchannels\` - set channels relating to ticket log and category
 > \`${prefix}setstaff\` - set staff roles`)
-.addField(`My Source Code`, `[Click Me!]()`, false)
+.addField(`My Source Code`, `[Click Me!](https://github.com/TajuModding/Discord-v13-Button-Tickets-bot)`, false)
       .setTimestamp()
       .setColor(0x5865F2)
       .setFooter(`All rights belong to https://discord.gg/vRQtfrAPJ3`)
@@ -261,7 +261,7 @@ client.on("messageCreate", async(message) =>{
     if (!message.member.permissions.has("MANAGE_GUILD")) return message.reply({content: `:x: This command requires \`MANAGE_MESSAGES\` permission.`});
     let channel = message.mentions.channels.first() || message.channel;
     const sfats = await db.get(`Staff_${message.guild.id}`)
-    if (!sfats) return message.rply({ embed: [sfatsembed] })
+    if (!sfats) return message.reply({ embed: [sfatsembed] })
     if (await db.get(`ticket_${channel.id}_${message.guild.id}`)) {
         
       message.reply({ embeds: [colldown1] })
@@ -276,22 +276,24 @@ client.on("messageCreate", async(message) =>{
     let channel = message.mentions.channels.first() || message.channel;
     const sfats = await db.get(`Staff_${message.guild.id}`)
     if (!sfats) return message.reply({ embeds: [sfatsembed] })
-    if (await db.get(`ticket_${channel.id}_${message.guild.id}`)) {
+  
       let msg = await message.reply({ embeds: [colldown1] })
       setTimeout(async () => {
         try {
           msg.delete()
-          
-          channel.send({ embed: { description: `Ticket has been closed by <@!${message.author.id}>`, color: `YELLOW` } })
+          const close = new Discord.MessageEmbed()
+          .setDescription(`Ticket has been closed by <@!${message.author.id}>`)
+          .setColor(`YELLOW`)
+          channel.send({ embeds: [close] })
           let type = 'member'
           await Promise.all(channel.permissionOverwrites.filter(o => o.type === type).map(o => o.delete()));
-          channel.setName(`closed-${(await db.get(`ticket_${channel.id}_${message.guild.id}`))}`)
+          channel.setName(`closed-ticket`)
 
         } catch (e) {
           return message.channel.send({content: `An error occurred, please try again!`});
         }
       }, 1000)
-    }
+    
   }
 
   if (command == prefix + 'open') {
@@ -348,22 +350,32 @@ client.on("messageCreate", async(message) =>{
   if (command == prefix + 'setstaff'){
     
     if (!message.member.permissions.has("ADMINISTRATOR")) return message.reply({ content: `:x: This command requires \`ADMINISTRATOR\` permission.`});
-    if (args.length != 2) return message.reply({ embed: { description: `Please provide an Admin role id, *then* a Mod role id with this command! `, color: 0x5865F2 } })
-    if (message.mentions.roles.length < 2 && !Number(args[0]) && !Number(args[1])) return message.reply({ embed: { description: `Please mention an Admin role (or iD) first, *then* a Mod role (or iD) with this command! `, color: 0x5865F2 } })
-    const Admin = message.guild.roles.cache.get(args[0]);
-    const Moder = message.guild.roles.cache.get(args[1]);
+    let main = = new Discord.MessageEmbed()
+    .setTitle(`Error`)
+    const Admin = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);
+    const Moder = message.mentions.roles.second() || message.guild.roles.cache.get(args[1]);
+    if (!Admin !Moder) {
+    main.setDescription(`Please mention an Admin role (or iD) first, *then* a Mod role (or iD) with this command! `)
+      
+      message.reply({ embeds: [main] })
+    }
+    
     await db.set(`Staff_${message.guild.id}.Admin`, Admin.id)
     await db.set(`Staff_${message.guild.id}.Moder`, Moder.id)
     message.react("✅")
   }
   if (command == prefix + 'setchannels'){
     if (!message.member.permissions.has('ADMINISTRATOR')) return message.reply({ content: `:x: This command requires \`ADMINISTRATOR\` permission.` });
-    if (args.length != 1) return message.reply({ embed: { description: `Please mention a categoryid with this command! `, color: 0x5865F2 } })
+     let main = = new Discord.MessageEmbed()
+    .setTitle(`Error`)
+     .setDescription(`Please mention a categoryid with this command! `)
+     
+    if (args.length != 1) return message.reply({ embeds: [main] })
     
    
     const cat = message.guild.channels.cache.get(args[0]);
   
-    if (cat.type !== "GUILD_CATEGORY") return message.channel.send({ content: "The second input should be a text category"});
+    if (cat.type !== "GUILD_CATEGORY") return message.channel.send({ content: "The input should be a category"});
    
     await db.set(`Channels_${message.guild.id}.Cat`, cat.id)
     message.react("✅")
