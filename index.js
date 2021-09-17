@@ -350,14 +350,14 @@ client.on("messageCreate", async(message) =>{
   if (command == prefix + 'setstaff'){
     
     if (!message.member.permissions.has("ADMINISTRATOR")) return message.reply({ content: `:x: This command requires \`ADMINISTRATOR\` permission.`});
-    let main = = new Discord.MessageEmbed()
-    .setTitle(`Error`)
+    
     const Admin = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);
     const Moder = message.mentions.roles.second() || message.guild.roles.cache.get(args[1]);
     if (!Admin || !Moder) {
-    main.setDescription(`Please mention an Admin role (or iD) first, *then* a Mod role (or iD) with this command! `)
-      
-      message.reply({ embeds: [main] })
+    
+      let main = = new Discord.MessageEmbed()
+     .setDescription(`Please mention an Admin role (or iD) first, *then* a Mod role (or iD) with this command! `)
+      return message.reply({ embeds: [main] })
     }
     
     await db.set(`Staff_${message.guild.id}.Admin`, Admin.id)
