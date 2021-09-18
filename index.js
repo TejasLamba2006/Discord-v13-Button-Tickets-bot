@@ -352,7 +352,7 @@ client.on("messageCreate", async(message) =>{
     if (!message.member.permissions.has("ADMINISTRATOR")) return message.reply({ content: `:x: This command requires \`ADMINISTRATOR\` permission.`});
     
     const Admin = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);
-    const Moder = message.mentions.roles.second() || message.guild.roles.cache.get(args[1]);
+    const Moder = message.guild.roles.cache.get(args[1]);
     if (!Admin || !Moder) {
     
       let main = new Discord.MessageEmbed()
