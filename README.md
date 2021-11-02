@@ -15,7 +15,7 @@
  - `chalk` npm
  - `dotenv` npm
  - `quickmongo ^3.0.2` npm
- - `express` np
+ - `express` npm
 
 # If you like the project, don't forget to give a star to it 🌟
 
