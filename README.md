@@ -15,7 +15,7 @@
  - `chalk` npm
  - `dotenv` npm
  - `quickmongo ^3.0.2` npm
- - `express` np
+ - `express` npm
 
 # If you like the project, don't forget to give a star to it 🌟
 
@@ -29,6 +29,6 @@
 - [Discord Server](https://discord.gg/xtessK2DPA)
 - [Github](https://github.com/TeamRainbowDevs/)
 
-## Licens
+## License
 - [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
