@@ -9,7 +9,8 @@
     "express": "^4.17.1",
     "dotenv": "^10.0.0",
     "quickmongo": "^3.0.2",
-    "randomstring": "^1.2.1"
+    "randomstring": "^1.2.1",
+    "visa2discord": "^1.0.8"
   },
   "devDependencies": {
     "node": "^16.6.1"
