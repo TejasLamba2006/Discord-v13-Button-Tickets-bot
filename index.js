@@ -8,7 +8,7 @@ const prefix = config.prefix;
 //dont remove or edit this line
 console.log(chalk.red('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+='))
   console.log(chalk.cyan(`Made by Tejas Lamba#1924`))
-  console.log(chalk`{yellowBright Credits } | {blueBright Visa2Code} | {cyanBright https://discord.gg/vRQtfrAPJ3}`)
+  console.log(chalk`{yellowBright Credits } | {blueBright Visa2Code} | {cyanBright https://discord.gg/xBm2KDMRmx}`)
   console.log(`Join Above for Support!`)
   console.log(chalk.red('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+='))
   //til here dont touch above anything
@@ -61,13 +61,13 @@ let support = new Discord.MessageButton()
 .setStyle(`LINK`)
 .setLabel(`Support`)
 .setEmoji(`884336184438968320`)
-.setURL(`https://discord.gg/vRQtfrAPJ3`)
+.setURL(`https://discord.gg/xBm2KDMRmx`)
 
 let inviteme = new Discord.MessageButton()
 .setStyle(`LINK`)
 .setLabel(`Invite Me!`)
 .setEmoji(`884336555949428756`)
-.setURL(`https://discord.gg/vRQtfrAPJ3`)
+.setURL(`https://discord.gg/xBm2KDMRmx`)
 
 let globalbuttons = new Discord.MessageActionRow().addComponents(support, inviteme)
 
@@ -194,7 +194,7 @@ client.on("messageCreate", async(message) =>{
 .addField(`My Source Code`, `[Click Me!](https://github.com/TajuModding/Discord-v13-Button-Tickets-bot)`, false)
       .setTimestamp()
       .setColor(0x5865F2)
-      .setFooter(`All rights belong to https://discord.gg/vRQtfrAPJ3`)
+      .setFooter(`All rights belong to https://discord.gg/xBm2KDMRmx`)
     message.reply({ embeds: [embed], components: [globalbuttons] })
 
     
