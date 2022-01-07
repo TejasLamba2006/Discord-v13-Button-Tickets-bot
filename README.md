@@ -23,10 +23,10 @@
 
 ## Any bug or suggestion !
 - Contact With Me Discord: Tejas Lamba#1924
-- or Discord Server [Rainbow Studios](https://discord.gg/xtessK2DPA)
+- or Discord Server [Rainbow Studios](https://discord.gg/xBm2KDMRmx)
 
 ## Rainbow Studio
-- [Discord Server](https://discord.gg/xtessK2DPA)
+- [Discord Server](https://discord.gg/xBm2KDMRmx)
 - [Github](https://github.com/TeamRainbowDevs/)
 
 ## License
