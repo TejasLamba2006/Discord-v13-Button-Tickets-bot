@@ -19,7 +19,16 @@
 
 # If you like the project, don't forget to give a star to it 🌟
 
+#### For People making a youtube video on it
 
+> There should be a line in your video description 
+
+```
+Credits to visa2code - https://youtube.com/@visa2code
+His discord server - https://discord.gg/nP2fB7M4Xf
+```
+
+> Any video not following this will be taken down!
 
 ## Any bug or suggestion !
 - Contact With Me Discord: Tejas Lamba#1924
